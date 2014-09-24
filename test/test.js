@@ -19,7 +19,7 @@ describe("site generator", function() {
     generator.generateSite(site1, newDirectory, function() {
       helpers.dirsContents(dirs, function(err, contents) {
         expect(contents.output).to.eql(contents.expected);
-      })
+      });
     });
   });
 });
