@@ -32,11 +32,21 @@ describe("site generator", function() {
     });
   });
 
-  it.skip("returns an error when layout.html doesn't exist", function (done) {
+  it("returns an error when layout.html doesn't exist", function (done) {
     var generator = new Generator();
-    var mach10Directory = path.join(__dirname, "fixtures/mach10Directory");
-    var layoutFile = path.join(__dirname, "fixtures/mach10Directory/layout.html");
-    generator.findLayoutFile(mach10Directory, function(err, fileName) {
+    var mach10Strikes = path.join(__dirname, "fixtures/mach10Strikes");
+    var layoutFile = path.join(__dirname, "fixtures/mach10Strikes/layout.html");
+    generator.findLayoutFile(mach10Strikes, function(err, fileName) {
+      expect(err).to.exist;
+      done();
+    });
+  });
+
+  it("returns an error when directory doesn't exist", function (done) {
+    var generator = new Generator();
+    var mach10Strikes = path.join(__dirname, "fixtures/mach10StrikesBack");
+    generator.findLayoutFile(mach10Strikes, function(err, fileName) {
+      console.log(err);
       expect(err).to.exist;
       done();
     });
