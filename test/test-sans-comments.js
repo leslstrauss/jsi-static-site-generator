@@ -5,7 +5,7 @@ var fs = require('fs');
 var Generator = require("../lib/generator");
 
 describe("site generator", function() {
-  it("creates page1.html", function (done) {
+  it.skip("creates page1.html", function (done) {
     var site1 = path.join(__dirname, 'fixtures/site1');
     var generator = new Generator();
     var newDirectory = path.join(__dirname, 'tmp');
