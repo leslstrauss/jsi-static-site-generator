@@ -21,7 +21,9 @@ describe("site generator", function() {
       });
     });
   });
+});
 
+describe('findLayoutFile', function() {
   it("finds the finds the layout.html", function (done) {
     var generator = new Generator();
     var mach10Directory = path.join(__dirname, "fixtures/mach10Directory");
@@ -46,9 +48,19 @@ describe("site generator", function() {
     var generator = new Generator();
     var mach10Strikes = path.join(__dirname, "fixtures/mach10StrikesBack");
     generator.findLayoutFile(mach10Strikes, function(err, fileName) {
-      console.log(err);
       expect(err).to.exist;
       done();
+    });
+  });
+});
+
+describe('findSourceFiles', function() {
+  it.skip('finds the source files', function(done) {
+    var generator = new Generator();
+    var mach10Directory = path.join(__dirname, "fixtures/mach10Directory");
+    var sourceFile1 = path.join(__dirname, "")
+    generator.findSourceFiles(mach10Directory, function(err, sourceFiles) {
+      expect(sourceFiles).to.eql()
     });
   });
 });
