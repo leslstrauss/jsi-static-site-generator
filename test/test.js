@@ -55,12 +55,15 @@ describe('findLayoutFile', function() {
 });
 
 describe('findSourceFiles', function() {
-  it.skip('finds the source files', function(done) {
+  it('finds the source files', function (done) {
     var generator = new Generator();
     var mach10Directory = path.join(__dirname, "fixtures/mach10Directory");
-    var sourceFile1 = path.join(__dirname, "")
+    var sourceFile1 = path.join(__dirname, "fixtures/mach10Directory/source-file1");
+    var sourceFile2 = path.join(__dirname, "fixtures/mach10Directory/source-file2");
+    var contentFiles = [sourceFile1, sourceFile2];
     generator.findSourceFiles(mach10Directory, function(err, sourceFiles) {
-      expect(sourceFiles).to.eql()
+      expect(sourceFiles).to.eql(contentFiles);
+      done();
     });
   });
 });
