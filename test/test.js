@@ -6,7 +6,7 @@ var helpers = require('./helpers');
 var Generator = require("../lib/generator");
 
 describe("site generator", function() {
-  it.skip("creates page1.html", function (done) {
+  it("creates page1.html", function (done) {
     var site1 = path.join(__dirname, 'fixtures/site1');
     // Creates a new variable site1 equal to the normalized
     // concatenation of __dirname + 'fixtures/site1' i.e.
@@ -68,16 +68,12 @@ describe('findSourceFiles', function() {
   });
 });
 
-// var layoutFile = this.findLayoutFile(directoryOfFiles);
+describe('generateOutputFile', function() {
+  it.skip('generates output files' function(done){
 
-  // // {Array.<Sting>} sourceFiles is an array of file names
-  // var sourceFiles = this.findSourceFiles(directoryOfFiles);
-
-  // sourceFiles.forEach(function(sourceFile) {
-  //   this.generateOutputFile(layoutFile, sourceFile, newDirectory, function(err) {
-  //     // generation done
-  //   });
-  // }.bind(this));
-
-  // TODO: only call the callback when all of the source files have been
-  // written
+    var generator = new Generator();
+    generator.generateOutputFile(layoutFile, sourceFile, newDirectory, function(err) {
+      // generation done
+    });
+  });
+});
